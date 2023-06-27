@@ -14,4 +14,4 @@ RUN mvn package -DskipTests
 ENV OPENAI_API_KEY=你的API_KEY
 
 # Run the web service on container startup.
-ENTRYPOINT ["java","-jar","/app/target/openAIService-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/target/ChatGptShellService-0.0.1-SNAPSHOT.jar"]
