@@ -23,10 +23,10 @@ public class ChatGptUntil {
 
     @Value("${openai.token}")
     private String ApiKey;
-    @Value("${proxy.host}")
-    private String host;
-    @Value("${proxy.port}")
-    private int port;
+//    @Value("${proxy.host}")
+//    private String host;
+//    @Value("${proxy.port}")
+//    private int port;
     //    @Resource
 //    private StringRedisTemplate stringRedisTemplate;
 //    @Resource
@@ -52,7 +52,8 @@ public class ChatGptUntil {
         String s = gson.toJson(bodymap);
 //        System.out.println(s);
         URL url1 = new URL(url);
-        HttpURLConnection conn = (HttpURLConnection) url1.openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port)));
+//        new Proxy(Proxy.Type.HTTP, new InetSocketAddress(host, port))
+        HttpURLConnection conn = (HttpURLConnection) url1.openConnection();
         conn.setRequestMethod("POST");
         conn.setRequestProperty("Authorization", "Bearer " + ApiKey);
         conn.setRequestProperty("Content-Type", "application/json");
