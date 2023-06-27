@@ -31,8 +31,8 @@ public class ChatGptController {
         List<ChatModel> chatModels = (List<ChatModel>) gson.fromJson(chatModelList, new TypeToken<List<ChatModel>>() {
         }.getRawType());
 
-//        response.setHeader("Access-Control-Allow-Origin", "*");
-//        response.setHeader("Cache-Control", "no-cache");
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        response.setHeader("Cache-Control", "no-cache");
 
         chatGptUntil.getRespost(chatModels, response);
 
