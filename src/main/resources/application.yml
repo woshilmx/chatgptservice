@@ -40,6 +40,7 @@ mybatis-plus:
 
 openai:
   token: ${OPENAI_API_KEY}
+#  token: 12345678
 
   timeout: 5000
 
