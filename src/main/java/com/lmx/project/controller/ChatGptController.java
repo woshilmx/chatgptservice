@@ -33,8 +33,7 @@ public class ChatGptController {
 
 //        response.setHeader("Access-Control-Allow-Origin", "*");
 //        response.setHeader("Cache-Control", "no-cache");
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("text/event-stream");
+
         chatGptUntil.getRespost(chatModels, response);
 
     }

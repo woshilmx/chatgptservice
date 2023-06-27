@@ -23,7 +23,7 @@ public class ChatGptUntil {
 
     @Value("${openai.token}")
     private String ApiKey;
-//    @Value("${proxy.host}")
+    @Value("${proxy.host}")
 //    private String host;
 //    @Value("${proxy.port}")
 //    private int port;
@@ -89,10 +89,11 @@ public class ChatGptUntil {
                     if (delta.has("content")) {
 //                        发送消息
                         String content = delta.get("content").getAsString();
-
-                        System.out.printf("%s", content);
-                        BaseResponse<String> success = ResultUtils.success(content);
-                        String s1 = gson.toJson(success);
+                        response.setCharacterEncoding("UTF-8");
+//                        response.setContentType("text/event-stream");
+//                        System.out.printf("%s", content);
+//                        BaseResponse<String> success = ResultUtils.success(content);
+                        String s1 = gson.toJson(content);
                         response.getWriter().write(s1);
                         response.getWriter().flush();
 
