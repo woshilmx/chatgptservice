@@ -91,11 +91,12 @@ public class ChatGptUntil {
                         String content = delta.get("content").getAsString();
 
                         System.out.printf("%s", content);
-                        String s1 = gson.toJson(content);
+                        BaseResponse<String> success = ResultUtils.success(content);
+                        String s1 = gson.toJson(success);
                         response.getWriter().write(s1);
                         response.getWriter().flush();
 
-//                        BaseResponse<String> success = ResultUtils.success(content);
+//
 //                        WebSocket webSocket = new WebSocket();
 
 //                        webSocket.sendMessageByUserId(conversionid, gson.toJson(success));
