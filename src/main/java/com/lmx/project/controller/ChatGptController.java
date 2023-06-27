@@ -8,13 +8,11 @@ import com.lmx.project.exception.BusinessException;
 import com.lmx.project.model.entity.ChatModel;
 import com.lmx.project.util.ChatGptUntil;
 import org.apache.commons.lang3.StringUtils;
-import org.omg.PortableServer.THREAD_POLICY_ID;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.BindException;
 import java.util.List;
 
 @RestController
