@@ -7,6 +7,9 @@ import com.lmx.project.model.entity.ChatModel;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.FluxSink;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
@@ -17,6 +20,8 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Component
 public class ChatGptUntil {
@@ -27,6 +32,7 @@ public class ChatGptUntil {
 //    private String host;
 //    @Value("${proxy.port}")
 //    private int port;
+    public static Map<String, SseEmitter> sseCache = new ConcurrentHashMap<>();
     //    @Resource
 //    private StringRedisTemplate stringRedisTemplate;
 //    @Resource
@@ -93,7 +99,13 @@ public class ChatGptUntil {
 //                        System.out.printf("%s", content);
 //                        BaseResponse<String> success = ResultUtils.success(content);
 //                        String s1 = gson.toJson(content);
-                        response.getWriter().write(content+"\n");
+//                        HashMap<String, String> stringStringHashMap = new HashMap<>();
+//                        stringStringHashMap.put("data", content);
+//                        stringStringHashMap.put("event", null);
+//                        stringStringHashMap.put("id", null);
+//                        stringStringHashMap.put("retry", null);
+//                        String s1 = gson.toJson(stringStringHashMap);
+                        response.getWriter().write(content);
                         response.getWriter().flush();
 
 //
@@ -120,5 +132,6 @@ public class ChatGptUntil {
 
 
     }
+
 
 }
