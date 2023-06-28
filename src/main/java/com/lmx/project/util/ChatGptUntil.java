@@ -89,8 +89,7 @@ public class ChatGptUntil {
                     if (delta.has("content")) {
 //                        发送消息
                         String content = delta.get("content").getAsString();
-                        response.setCharacterEncoding("UTF-8");
-//                        response.setContentType("text/event-stream");
+
 //                        System.out.printf("%s", content);
 //                        BaseResponse<String> success = ResultUtils.success(content);
 //                        String s1 = gson.toJson(content);
