@@ -96,7 +96,7 @@ public class ChatGptUntil {
 //                        发送消息
                         String content = delta.get("content").getAsString();
 
-//                        System.out.printf("%s", content);
+                        System.out.printf("%s", content);
 //                        BaseResponse<String> success = ResultUtils.success(content);
 //                        String s1 = gson.toJson(content);
 //                        HashMap<String, String> stringStringHashMap = new HashMap<>();

@@ -41,7 +41,6 @@ mybatis-plus:
 openai:
   token: ${OPENAI_API_KEY}
 
-
   timeout: 5000
 
 proxy:
