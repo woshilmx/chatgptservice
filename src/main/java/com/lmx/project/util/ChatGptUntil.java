@@ -93,7 +93,7 @@ public class ChatGptUntil {
 //                        System.out.printf("%s", content);
 //                        BaseResponse<String> success = ResultUtils.success(content);
 //                        String s1 = gson.toJson(content);
-                        response.getWriter().write(content);
+                        response.getWriter().write(content+"\n");
                         response.getWriter().flush();
 
 //
