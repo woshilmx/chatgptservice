@@ -97,15 +97,9 @@ public class ChatGptUntil {
                         String content = delta.get("content").getAsString();
 
                         System.out.printf("%s", content);
-//                        BaseResponse<String> success = ResultUtils.success(content);
-//                        String s1 = gson.toJson(content);
-//                        HashMap<String, String> stringStringHashMap = new HashMap<>();
-//                        stringStringHashMap.put("data", content);
-//                        stringStringHashMap.put("event", null);
-//                        stringStringHashMap.put("id", null);
-//                        stringStringHashMap.put("retry", null);
-//                        String s1 = gson.toJson(stringStringHashMap);
-                        response.getWriter().write(content);
+
+                        BaseResponse<String> success = ResultUtils.success(content);
+                        response.getWriter().write(gson.toJson(success));
                         response.getWriter().flush();
 
 //
